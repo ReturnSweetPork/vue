@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <div id="app">
+        <h1>{{message}}</h1>
+        <h1 v-text='message'></h1>
+        <div>
+            {{msg}}
+        </div>
+        <div v-html="msg"></div>
+        <h1 v-show='false'>쇼이거 보이냐</h1>
+        <h1 v-if='false'>이프이거 보이냐</h1>
+        <a v-bind:href='URL'>네이버</a>
+        <select v-model="select">
+            <option value='all'>전체보기</option>
+            <option value="='complete'">완료한것</option>
+            <option value=" = 'active'">아직안한거</option>
+        </select>
+
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: ' #app',
+            data:{
+                message:'안녕하세요~~오늘은5월  7일임 ㅠㅠ',
+                msg:'<h3>이거 되냐고</h3>',
+                URL:'HTTPS://WWW.NAVER.COM',
+                todos:[
+
+
+                    {text:'공부하기', complete:true},
+                    {text:'밥먹기', complete:false},
+                    {text:'잠자기', complete:false},
+                ],
+                select:'all'
+            }
+        })
+    </script>
+</body>
+</html>
